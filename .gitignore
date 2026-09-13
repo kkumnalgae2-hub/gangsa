@@ -1,0 +1,8 @@
+tmp/
+.vercel/
+.sites-runtime/
+node_modules/
+.env*
+*.hwp
+*.hwpx
+강사랜딩페이지 기획서.pdf
