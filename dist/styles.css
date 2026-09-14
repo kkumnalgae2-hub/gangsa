@@ -25,3 +25,39 @@ body{font-size:16px;font-weight:500}input,textarea{font-size:16px;font-weight:50
 @media(max-width:800px){.institute-symbol{width:70px}.institute-name{width:175px}}
 @media(max-width:480px){.header .institute-brand{gap:4px}.institute-symbol{width:50px}.institute-name{width:140px}.header{padding-left:16px;padding-right:16px;gap:8px}}
 @media(max-width:360px){.institute-symbol{width:43px}.institute-name{width:123px}}
+
+/* Accessible institute wordmark and centered instructor caption. */
+.header .institute-name{width:auto;color:#000;font-size:23px;font-weight:800;letter-spacing:-1px;white-space:nowrap;mix-blend-mode:normal;transition:color .18s ease}
+.header .institute-brand:hover .institute-name,.header .institute-brand:focus-visible .institute-name{color:#2455d6}
+.instructor-profile figcaption{align-items:center;text-align:center}
+@media(max-width:1100px){.header .institute-name{font-size:20px}}
+@media(max-width:480px){.header .institute-name{font-size:17px;letter-spacing:-.8px}}
+@media(max-width:360px){.header .institute-name{font-size:15px}}
+
+/* 연구소 공통 영역: 기존 색과 글꼴을 따릅니다. */
+.header,.institute-top{position:sticky;top:0;z-index:30;border-bottom:1px solid #e0d2c5;background:#f5ecdf}
+.institute-brand{display:inline-flex;align-items:center;gap:9px;padding:6px;border-radius:4px;text-decoration:none;color:inherit;flex-shrink:0}
+.institute-brand:hover,.institute-brand:focus-visible{background:#eee2d3}
+.institute-brand img{height:24px!important;width:auto!important;max-width:none;mix-blend-mode:multiply}
+.institute-brand img[hidden]{display:none!important}
+.institute-label{display:flex;flex-direction:column;gap:2px}
+.institute-brand .institute-name{color:#000;font-size:20px;font-weight:800;white-space:nowrap;line-height:1.3;width:auto;letter-spacing:-.7px}
+.institute-brand:hover .institute-name,.institute-brand:focus-visible .institute-name{color:#2455d6}
+.institute-brand .institute-english,.header .brand .institute-english{display:block;font-size:10px;letter-spacing:.7px;line-height:1.4;margin:0;white-space:nowrap;color:#594b43}
+.footer,.institute-bottom{background:#f5ecdf}
+.institute-bottom{padding:24px 0;border-top:1px solid #e0d2c5;margin-top:32px}
+.institute-top{padding:8px 0}
+@media(max-width:480px){.header .institute-name,.institute-brand .institute-name{font-size:17px}.institute-brand{gap:6px}.institute-brand .institute-english,.header .brand .institute-english{font-size:8px;letter-spacing:.4px}}
+
+/* 추가된 동의 영역과 전송 상태만 기존 폼 스타일에 맞춥니다. */
+.privacy-controls{margin-top:14px}.privacy-controls .privacy-consent{margin-bottom:8px}
+.privacy-notice summary{cursor:pointer;font-weight:700}.privacy-notice table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.7}
+.privacy-notice th,.privacy-notice td{text-align:left;vertical-align:top;border-bottom:1px solid #d9c9b7;padding:9px 6px}.privacy-notice th{width:30%}
+#submit-guard{border-radius:4px}#submit-guard:focus-visible{outline:2px solid #945640;outline-offset:3px}
+#inquiry-submit:disabled{opacity:.5;cursor:not-allowed;pointer-events:none}#consent-help:empty{display:none}
+#form-status{min-height:1.6em}#inquiry-form[aria-busy="true"]{cursor:progress}
+/* 작은 화면에서는 연구소 이름을 유지하고 문의 버튼의 잘림을 막습니다. */
+@media(max-width:480px){.header{height:auto;min-height:80px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;row-gap:4px}.header .nav-cta{white-space:nowrap;margin-left:auto}}
+
+/* 영문명을 한글 연구소명 아래 중앙에 정렬합니다. */
+.institute-label{text-align:center}

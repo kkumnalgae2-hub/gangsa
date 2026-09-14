@@ -1,4 +1,5 @@
 tmp/
+output/
 .vercel/
 .sites-runtime/
 node_modules/
