@@ -24,7 +24,7 @@ analytics.write_text(a,encoding='utf-8')
 today=datetime.now(ZoneInfo('Asia/Seoul')).date().isoformat()
 xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for page in config['pages']:
-    xml+=f'  <url><loc>{escape(base+page["path"])}</loc><lastmod>{today}</lastmod><changefreq>{page["changefreq"]}</changefreq><priority>{page["priority"]}</priority></url>\n'
+    xml+=f'  <url><loc>{escape(base+page["path"])}</loc><lastmod>{page.get("lastmod",today)}</lastmod><changefreq>{page["changefreq"]}</changefreq><priority>{page["priority"]}</priority></url>\n'
 (ROOT/'sitemap.xml').write_text(xml+'</urlset>\n',encoding='utf-8')
 llms=f'# {config["siteName"]}\n\n> {config["description"]}\n\n## 핵심 페이지\n'
 for page in config['pages']:
