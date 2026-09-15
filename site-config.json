@@ -1,11 +1,11 @@
 {
   "siteUrl": "https://daarm.vercel.app",
-  "siteName": "AI강사김다감",
+  "siteName": "심리·직업상담 × AI 실전 교육 강사 - 김다감",
   "description": "소상공인, 제대군인, 구직자, 시니어를 대상으로 하는 AI활용 강사",
   "keywords": ["소상공인AI", "제대군인AI", "구직자AI", "시니어AI", "힐링AI", "강점AI", "우리가게홍보AI", "시니어앨범제작AI", "커리어AI"],
   "email": "kkumnalgae1@gmail.com",
   "pages": [
-    {"path": "/", "title": "AI강사김다감", "description": "강사 소개, 대상별 AI 교육 프로그램, 작품과 강의 문의", "priority": "1.0", "changefreq": "monthly"},
+    {"path": "/", "title": "심리·직업상담 × AI 실전 교육 강사 - 김다감", "description": "강사 소개, 대상별 AI 교육 프로그램, 작품과 강의 문의", "priority": "1.0", "changefreq": "monthly"},
     {"path": "/curriculum.html", "title": "교육과정 안내", "description": "소상공인 홍보, 커리어 포트폴리오, 시니어 앨범 교육과정", "priority": "0.8", "changefreq": "monthly"}
   ]
 }
