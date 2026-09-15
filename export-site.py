@@ -16,6 +16,11 @@ names=['robots.txt','sitemap.xml','llms.txt','email_template_notify.html','email
 for p in list(dist.glob('*.html'))+[dist/'app.js']+[ROOT/n for n in names]:
     s=p.read_text(encoding='utf-8').replace(old_base,base)
     p.write_text(s,encoding='utf-8')
+analytics=dist/'analytics.js'
+a=analytics.read_text(encoding='utf-8')
+a=re.sub(r'const GA4_MEASUREMENT_ID = .*?;', 'const GA4_MEASUREMENT_ID = '+json.dumps(config.get('ga4MeasurementId',''))+';', a)
+analytics.write_text(a,encoding='utf-8')
+
 today=datetime.now(ZoneInfo('Asia/Seoul')).date().isoformat()
 xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for page in config['pages']:
@@ -47,6 +52,7 @@ def embed(m):
     mime={'.jpg':'image/jpeg','.png':'image/png','.html':'text/html;charset=utf-8'}[p.suffix]
     return prefix+'"data:'+mime+';base64,'+base64.b64encode(p.read_bytes()).decode()+'"'
 s=re.sub(r'(src=|href=)"/((?:assets/[^\"]+)|curriculum\.html)"',embed,s)
+s=s.replace('<script src="analytics.js" defer></script>', '<script>'+analytics.read_text(encoding='utf-8')+'</script>')
 assert not re.search(r'(?:src|href)="/',s)
 (out/'index.html').write_text(s,encoding='utf-8')
 print('내보내기 완료:',out)

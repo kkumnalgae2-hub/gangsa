@@ -40,3 +40,14 @@ Vercel에서 이 저장소를 가져오고 Framework Preset을 Other로 설정�
 메인 원본은 `dist/index.html`이며 `output/website/index.html`은 생성 파일입니다. 변경 후 내보내기를 실행하세요. EmailJS 상수 네 개는 `dist/app.js` 상단에서만 수정합니다. URL을 변경할 때는 `site-config.json`의 `siteUrl`만 변경하고 내보내기를 실행합니다.
 
 EmailJS 서비스·템플릿 저장과 Gmail 전달/라벨은 운영자가 안내서에 따라 설정해야 합니다. 실제 수신 확인은 알림·자동회신·네이버 전달·라벨을 각각 확인합니다. 개발 검증에서 대체 전송 함수를 사용한 테스트는 실제 이메일 수신을 의미하지 않습니다.
+
+## 방문 분석과 문의 전환
+
+- `site-config.json`의 `ga4MeasurementId`에 실제 G- 측정 ID를 넣고 `export-site.py`를 실행합니다. 현재는 미설정이며 외부 분석 요청을 하지 않습니다.
+- GA4 웹 스트림에서 향상된 측정의 양식 상호작용 자동 수집은 끕니다. 입력한 이름, 이메일, 전화번호와 문의 내용은 분석 이벤트에 전달하지 않습니다.
+- `generate_lead`: EmailJS 접수 알림 전송이 성공한 경우 한 번 기록합니다. 자동회신 실패는 이미 접수된 문의를 중복 집계하지 않습니다.
+- `contact_phone_click`, `contact_email_click`: 연락 링크 클릭을 별도 측정합니다. 실제 통화나 이메일 발송 완료를 의미하지 않습니다.
+- GA4 실시간 보고서에서 이벤트를 확인한 후 `generate_lead`를 주요 이벤트로 지정합니다. 실제 데이터 수신 검증은 측정 ID 연결 후 수행합니다.
+- 검색용 제목은 수정했지만 검색엔진의 실제 표시는 재수집 후 반영되며 검색엔진이 다른 제목을 선택할 수 있습니다.
+
+검증: `node tests/emailjs.cjs`, `node tests/analytics.cjs`, `python tests/site.py`.

@@ -85,6 +85,8 @@ form.addEventListener('submit', async event => {
     const options = { publicKey: EMAILJS_PUBLIC_KEY };
     await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params, options);
     notified = true;
+    // 접수 알림 성공만 문의 전환으로 기록하며 입력 내용은 보내지 않습니다.
+    try { window.trackSiteEvent?.("generate_lead"); } catch (_) {}
     // EmailJS의 초당 1회 제한에 맞춰 자동회신을 순서대로 전송합니다.
     await new Promise(resolve => setTimeout(resolve, 1100));
     await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_ID, params, options);
@@ -102,3 +104,7 @@ form.addEventListener('submit', async event => {
     updateConsent();
   }
 });
+
+// 상세 과정에서 넘어온 선택값만 반영합니다.
+const chosenProgram = new URLSearchParams(location.search).get('program');
+if (['business', 'career', 'life'].includes(chosenProgram)) document.getElementById('inquiry-program').value = chosenProgram;

@@ -1,11 +1,62 @@
 {
   "siteUrl": "https://daarm.vercel.app",
-  "siteName": "심리·직업상담 × AI 실전 교육 강사 - 김다감",
+  "siteName": "AI 콘텐츠 강사 × AI 실전 활용 교육 강사 - 김다감",
   "description": "소상공인, 제대군인, 구직자, 시니어를 대상으로 하는 AI활용 강사",
-  "keywords": ["소상공인AI", "제대군인AI", "구직자AI", "시니어AI", "힐링AI", "강점AI", "우리가게홍보AI", "시니어앨범제작AI", "커리어AI"],
+  "keywords": [
+    "소상공인AI",
+    "제대군인AI",
+    "구직자AI",
+    "시니어AI",
+    "힐링AI",
+    "강점AI",
+    "우리가게홍보AI",
+    "시니어앨범제작AI",
+    "커리어AI"
+  ],
   "email": "kkumnalgae1@gmail.com",
   "pages": [
-    {"path": "/", "title": "심리·직업상담 × AI 실전 교육 강사 - 김다감", "description": "강사 소개, 대상별 AI 교육 프로그램, 작품과 강의 문의", "priority": "1.0", "changefreq": "monthly"},
-    {"path": "/curriculum.html", "title": "교육과정 안내", "description": "소상공인 홍보, 커리어 포트폴리오, 시니어 앨범 교육과정", "priority": "0.8", "changefreq": "monthly"}
-  ]
+    {
+      "path": "/",
+      "title": "AI 콘텐츠 강사 × AI 실전 활용 교육 강사 - 김다감",
+      "description": "강사 소개, 대상별 AI 교육 프로그램, 작품과 강의 문의",
+      "priority": "1.0",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/curriculum.html",
+      "title": "교육과정 안내",
+      "description": "소상공인 홍보, 커리어 포트폴리오, 시니어 앨범 교육과정",
+      "priority": "0.8",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/about.html",
+      "title": "김다감 강사 소개",
+      "description": "심리·직업상담과 AI 실전 교육을 연결하는 김다감 강사의 전문 분야와 자격",
+      "priority": "0.8",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/course-business.html",
+      "title": "우리 가게 홍보 페이지",
+      "description": "가게의 강점을 찾고 AI 카피라이팅과 노코드 도구로 3시간 만에 홍보 페이지를 완성합니다.",
+      "priority": "0.8",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/course-career.html",
+      "title": "나만의 커리어 포트폴리오",
+      "description": "군 경력과 다양한 경험을 NCS 직무 관점으로 다시 읽고, 다음 커리어를 위한 언어로 정리합니다.",
+      "priority": "0.8",
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/course-life.html",
+      "title": "내 삶을 담은 힐링 앨범",
+      "description": "인생의 이야기를 정리하고 AI 사진 복원·생성으로 추억을 되살려, 오래 간직할 앨범과 책을 만듭니다.",
+      "priority": "0.8",
+      "changefreq": "monthly"
+    }
+  ],
+  "ga4MeasurementId": ""
 }
