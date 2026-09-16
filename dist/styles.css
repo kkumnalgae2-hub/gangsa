@@ -61,3 +61,9 @@ body{font-size:16px;font-weight:500}input,textarea{font-size:16px;font-weight:50
 
 /* 영문명을 한글 연구소명 아래 중앙에 정렬합니다. */
 .institute-label{text-align:center}
+
+/* 메인에서는 머리부터 허벅지까지, 상세 소개에서는 전신을 보여줍니다. */
+.profile-crop{position:relative;aspect-ratio:620/880;overflow:hidden;background:#eee2d3}
+.instructor-profile .profile-crop img{position:absolute;width:174.84%;max-width:none;height:auto;left:-45.16%;top:-5.68%}
+.full-profile-intro{grid-template-columns:minmax(280px,440px) minmax(0,1fr);gap:60px}
+@media(max-width:760px){.full-profile-intro{grid-template-columns:1fr;gap:36px}.full-profile-intro .instructor-profile{max-width:440px;width:100%;margin-inline:auto}}
